@@ -8,4 +8,9 @@
       <span class="badge">{{hero.id}}</span> {{ hero.name }}
     </li>
   </ul>
-  <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+  <div *ngIf="selectedHero">
+    <h2>
+      {{selectedHero.name | uppercase}} est mon héros
+    </h2>
+    <a [routerLink]="['/detail', selectedHero.id]">Plus d'infos</a>
+  </div>
